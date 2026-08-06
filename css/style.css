@@ -486,14 +486,22 @@ nav {
     font-style: italic;
 }
 
-/* Projects Table Page */
+/* Inner Page Headers */
+.about-header,
+.gallery-header,
+.testimonals-header,
+.contact-header,
 .projects-header {
-    background: linear-gradient(135deg, #ad2121 0%, #7c1414 100%);
+    background: linear-gradient(135deg, #ad2121 0%, #7c1414 100%) !important;
     color: #ffffff;
     padding: 60px 0;
     text-align: center;
 }
 
+.about-header h1,
+.gallery-header h1,
+.testimonals-header h1,
+.contact-header h1,
 .projects-header h1 {
     font-family: var(--font-heading);
     font-size: 45px;
@@ -788,8 +796,9 @@ footer {
     .nav-menu {
         display: none;
         flex-direction: column;
+        align-items: flex-start;
         position: absolute;
-        top: 75px;
+        top: 70px;
         left: 0;
         width: 100%;
         background-color: #ffffff;
@@ -798,17 +807,29 @@ footer {
         gap: 15px;
         box-shadow: 0 10px 15px rgba(0,0,0,0.05);
     }
+    .nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
     .nav-menu.open {
         display: flex;
     }
     .menu-toggle {
         display: flex;
+        margin-left: auto;
     }
     .hero {
         height: 500px;
     }
     .hero-title {
         font-size: 38px;
+    }
+    .about-header h1,
+    .gallery-header h1,
+    .testimonals-header h1,
+    .contact-header h1,
+    .projects-header h1 {
+        font-size: 35px;
     }
     .about-intro-grid,
     .contact-grid {
@@ -818,6 +839,10 @@ footer {
     .clients-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+    }
+    .client-logo-box {
+        height: 80px;
+        padding: 10px;
     }
     .values-grid {
         grid-template-columns: 1fr;
@@ -834,8 +859,20 @@ footer {
     .hero-title {
         font-size: 30px;
     }
+    .about-header h1,
+    .gallery-header h1,
+    .testimonals-header h1,
+    .contact-header h1,
+    .projects-header h1 {
+        font-size: 28px;
+    }
     .clients-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .client-logo-box {
+        height: 70px;
+        padding: 8px;
     }
     .screenshot-grid {
         grid-template-columns: 1fr;
