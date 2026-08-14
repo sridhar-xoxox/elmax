@@ -445,6 +445,296 @@ nav {
 }
 
 /* ==========================================
+   HERO ENHANCEMENTS
+   ========================================== */
+.hero-badge {
+    display: inline-block;
+    background: rgba(211, 47, 47, 0.9);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.8);
+    max-width: 540px;
+    margin-bottom: 32px;
+    line-height: 1.65;
+}
+
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.7);
+    color: #fff;
+    box-shadow: none;
+}
+.btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: none;
+}
+
+.hero-trim {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--bg-white);
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    z-index: 5;
+}
+
+/* ==========================================
+   SERVICES SECTION
+   ========================================== */
+.services-section {
+    background: var(--bg-white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.service-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 32px 24px 28px;
+    text-align: left;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--primary-gradient);
+    transition: width 0.4s ease;
+}
+
+.service-card:hover::before { width: 100%; }
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(211, 47, 47, 0.25);
+}
+
+.service-card.featured-service {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    color: #fff;
+}
+
+.service-card.featured-service:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(211, 47, 47, 0.3);
+}
+
+.service-card.featured-service::before { display: none; }
+
+.service-icon-wrap {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 20px;
+}
+
+.service-icon-wrap svg { width: 100%; height: 100%; }
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.service-card.featured-service h3 { color: #fff; }
+
+.service-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.service-card.featured-service p { color: rgba(255,255,255,0.8); }
+
+.service-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+}
+.service-link:hover { color: var(--primary-hover); }
+
+.service-link-white {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+}
+.service-link-white:hover { color: #fff; }
+
+/* ==========================================
+   WHY CHOOSE US STRIP
+   ========================================== */
+.why-us-section {
+    background: var(--bg-dark);
+    padding: 50px 0;
+}
+
+.why-us-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.why-us-item {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 30px;
+    gap: 8px;
+}
+
+.why-us-number {
+    font-family: var(--font-heading);
+    font-size: 44px;
+    color: var(--primary-color);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.why-us-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.why-us-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255,255,255,0.12);
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   CLIENTS MARQUEE
+   ========================================== */
+.marquee-wrapper {
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+    padding: 8px 0 20px;
+}
+
+/* Soft edge fade left/right */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+.marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-light), transparent);
+}
+.marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-light), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-slide {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 14px 20px;
+    width: 140px;
+    height: 90px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.marquee-slide:hover {
+    border-color: rgba(211, 47, 47, 0.3);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.marquee-slide img {
+    max-height: 55px;
+    max-width: 110px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.65;
+    transition: var(--transition);
+}
+
+.marquee-slide:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ==========================================
    GALLERY GRID & CARD HOVER EFFECTS
    ========================================== */
 .gallery-section {
@@ -1325,6 +1615,7 @@ footer {
     .clients-grid { grid-template-columns: repeat(4, 1fr); }
     .values-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1370,6 +1661,23 @@ footer {
     
     .mission-box { padding: 24px 20px; border-left-width: 4px; text-align: left; }
     .mission-box p { font-size: 15px; line-height: 1.7; text-align: left; }
+    
+    /* Services grid: 2 col on tablet */
+    .services-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 32px; }
+    
+    /* Hero sub-text */
+    .hero-sub { font-size: 15px; max-width: 100%; }
+    .hero-cta-row { gap: 12px; }
+    .btn-outline { width: auto; }
+    
+    /* Why Us strip: 2x2 grid on mobile */
+    .why-us-grid { gap: 0; }
+    .why-us-divider { display: none; }
+    .why-us-item { min-width: 50%; flex: 0 0 50%; padding: 20px 12px; }
+    .why-us-number { font-size: 36px; }
+    
+    /* Hero trim hide on mobile to avoid overlap */
+    .hero-trim { height: 40px; }
     
     /* Mobile Filter Badges Horizontal Swipe Row */
     .projects-filter-panel { padding: 16px; margin-bottom: 25px; }
@@ -1455,9 +1763,13 @@ footer {
     .top-bar { font-size: 11px; padding: 8px 10px; line-height: 1.4; }
     .hero-title { font-size: 30px; }
     .btn { width: 100%; text-align: center; }
+    .btn-outline { width: 100%; }
     
     .mission-box { padding: 20px 16px; border-left-width: 4px; }
     .mission-box p { font-size: 14.5px; line-height: 1.65; text-align: left; }
+    
+    /* Services: 1 column on small phones */
+    .services-grid { grid-template-columns: 1fr; gap: 14px; }
     
     table.project-table {
         min-width: 650px;
