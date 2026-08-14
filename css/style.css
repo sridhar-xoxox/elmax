@@ -68,7 +68,7 @@
     --shadow-sm: 0 4px 14px rgba(11, 17, 32, 0.04);
     --shadow-md: 0 12px 28px rgba(11, 17, 32, 0.08);
     --shadow-lg: 0 24px 48px rgba(11, 17, 32, 0.14);
-    --shadow-glow: 0 10px 32px rgba(211, 47, 47, 0.35);
+    --shadow-glow: 0 6px 20px rgba(211, 47, 47, 0.2);
 }
 
 /* Reset Styles */
@@ -298,18 +298,16 @@ nav {
     overflow: hidden;
 }
 
-/* Ambient Electric Radial Glow */
+/* Subtle bottom gradient fade */
 .hero::after {
     content: '';
     position: absolute;
-    top: var(--mouse-y, 50%);
-    left: var(--mouse-x, 50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(206, 24, 24, 0.25) 0%, rgba(14, 165, 233, 0.08) 40%, transparent 70%);
-    transform: translate(-50%, -50%);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to top, rgba(9, 13, 22, 0.5), transparent);
     pointer-events: none;
-    transition: top 0.1s ease-out, left 0.1s ease-out;
 }
 
 .hero-bg {
@@ -320,13 +318,13 @@ nav {
     height: 100%;
     object-fit: cover;
     opacity: 0.55;
-    transform: scale(1.03);
-    animation: heroZoom 20s infinite alternate ease-in-out;
+    transform: scale(1.02);
+    animation: heroZoom 25s infinite alternate ease-in-out;
 }
 
 @keyframes heroZoom {
-    0% { transform: scale(1.02); }
-    100% { transform: scale(1.08); }
+    0% { transform: scale(1.01); }
+    100% { transform: scale(1.03); }
 }
 
 .hero-overlay {
@@ -335,25 +333,10 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(9, 13, 22, 0.92) 0%, rgba(9, 13, 22, 0.75) 50%, rgba(206, 24, 24, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(9, 13, 22, 0.78) 0%, rgba(9, 13, 22, 0.60) 60%, rgba(206, 24, 24, 0.15) 100%);
 }
 
-/* Circuit Grid Pattern Overlay */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    opacity: 0.5;
-    z-index: 2;
-    pointer-events: none;
-}
+/* Removed circuit grid overlay - keep clean */
 
 .hero-content {
     position: relative;
@@ -374,9 +357,7 @@ nav {
 
 .hero-title strong {
     display: block;
-    background: linear-gradient(90deg, #ffffff 0%, #ffc1c1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
 }
 
 /* Modern Shiny Button */
@@ -407,9 +388,9 @@ nav {
     left: -100%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transform: skewX(-25deg);
-    transition: 0.7s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+    transform: skewX(-20deg);
+    transition: 0.5s;
 }
 
 .btn:hover::before {
